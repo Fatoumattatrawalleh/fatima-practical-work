@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 const connect = require('./modules/connect');
-
+const routes = require('./routes/router')
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
@@ -21,6 +21,6 @@ app.get('/', (req, res) => {
     res.status(200).json({ message: 'peace'});
 });
 
-app.use('/api', this.routes);
+app.use('/api', routes);
 
 module.exports = app;
